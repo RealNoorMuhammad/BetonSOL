@@ -136,28 +136,7 @@ function HeroSection() {
       </div>
 
       {/* Live Badge with 3D effect */}
-      <motion.div 
-        className="live-badge-3d"
-        initial={{ opacity: 0, y: -20, rotateX: -90 }}
-        animate={{ opacity: 1, y: 0, rotateX: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <motion.span
-          className="dot-3d"
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [1, 0.6, 1],
-            boxShadow: [
-              "0 0 10px rgba(20, 241, 149, 0.5), inset 0 0 20px rgba(20, 241, 149, 0.3)",
-              "0 0 25px rgba(20, 241, 149, 1), inset 0 0 30px rgba(20, 241, 149, 0.5)",
-              "0 0 10px rgba(20, 241, 149, 0.5), inset 0 0 20px rgba(20, 241, 149, 0.3)",
-            ],
-          }}
-          transition={{ duration: 1.2, repeat: Infinity }}
-        ></motion.span>
-        {t("hero.liveNow")}
-      </motion.div>
-
+    
       {/* 3D Title Container */}
       <motion.div
         className="hero-title-container-3d"
@@ -190,7 +169,7 @@ function HeroSection() {
             }}
           >
             <GlitchText className="highlight">
-              {t("hero.titleHighlight")}
+           
             </GlitchText>
           </motion.span>
         </motion.h1>
