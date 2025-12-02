@@ -7,36 +7,17 @@ import {
 import "./HeroSection.css";
 import { FaTwitter, FaBolt, FaShieldAlt, FaGlobe, FaCoins } from "react-icons/fa";
 import { RiLink } from "react-icons/ri";
-import { LuCopy } from "react-icons/lu";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { useTranslation } from "../../hooks/useTranslation";
 import useHoverSound from "../../hooks/useHoverSound";
 import GlitchText from "../GlitchText";
 import ConnectWalletModal from "../ConnectWalletModal";
 
 function HeroSection() {
-  const contractAddress = "0x1234567890abcdef1234567890abcdef12345678";
   const { t } = useTranslation();
   const { playHoverSound, playClickSound } = useHoverSound();
   const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
   const heroRef = useRef(null);
-
-  const handleCopy = () => {
-    playClickSound();
-    navigator.clipboard.writeText(contractAddress);
-    toast.success(t("hero.contractCopied"), {
-      position: "top-right",
-      style: {
-        background: "#000",
-        color: "#14F195",
-        border: "1px solid #14F195",
-      },
-      iconTheme: {
-        primary: "#14F195",
-        secondary: "#000",
-      },
-    });
-  };
 
   // ---- 3D Mouse Parallax Logic ----
   const [hovered, setHovered] = useState(false);
@@ -204,36 +185,6 @@ function HeroSection() {
           <FaCoins /> {t("hero.followTwitter")}{" "}
           <span className="footer-highlight">{t("hero.followHandle")}</span> {t("hero.followOnX")}
         </motion.p>
-        <motion.div 
-          className="contract-3d"
-          whileHover={{ scale: 1.02 }}
-        >
-          <p>{t("hero.contractAddress")}</p>
-          <motion.div 
-            className="address-box-3d"
-            whileHover={{
-              scale: 1.05,
-              rotateY: 2,
-            }}
-            style={{
-              transformStyle: "preserve-3d",
-            }}
-          >
-            {contractAddress}
-            <motion.button 
-              className="copy-btn-3d" 
-              onClick={handleCopy}
-              onMouseEnter={playHoverSound}
-              whileHover={{
-                scale: 1.2,
-                rotateZ: 90,
-              }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <LuCopy />
-            </motion.button>
-          </motion.div>
-        </motion.div>
       </motion.div>
 
       {/* Connect Wallet Modal */}

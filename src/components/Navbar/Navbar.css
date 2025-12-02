@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
-  background-color: rgba(5, 5, 5, 0.85); /* Dark transparent bg */
+  background-color: rgb(5, 5, 5); /* Dark transparent bg */
   backdrop-filter: blur(10px);
   color: var(--text-primary);
   position: fixed;
@@ -363,5 +363,10 @@
   /* Hide icons (Twitter, dark/light) on mobile top */
   .nav-right .icon {
     display: none !important;
+  }
+
+  /* Black background for navbar on mobile */
+  .navbar {
+    background-color: #000000;
   }
 }
