@@ -24,3 +24,12 @@
   color: var(--text-secondary);
   line-height: 1.6;
 }
+
+
+.drawer-links{
+  background-color: black !important;
+}
+
+.drawer-footer{
+  background-color: black !important;
+}
