@@ -90,50 +90,6 @@ function HeroSection() {
     >
       <Toaster />
 
-      {/* 3D Background Elements */}
-      <div className="hero-3d-bg">
-        <motion.div 
-          className="floating-cube cube-1"
-          animate={{
-            y: [0, -20, 0],
-            rotateX: [0, 5, 0],
-            rotateY: [0, 10, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        <motion.div 
-          className="floating-cube cube-2"
-          animate={{
-            y: [0, 30, 0],
-            rotateX: [0, -5, 0],
-            rotateY: [0, -15, 0],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-        />
-        <motion.div 
-          className="floating-cube cube-3"
-          animate={{
-            y: [0, -15, 0],
-            rotateX: [0, 8, 0],
-            rotateY: [0, -8, 0],
-          }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-        />
-      </div>
 
       {/* Live Badge with 3D effect */}
     

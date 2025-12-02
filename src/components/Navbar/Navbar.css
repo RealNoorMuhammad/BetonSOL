@@ -1,19 +1,21 @@
 /* Use global theme variables */
 
-/* General Navbar */
+/* General Navbar - Cyberpunk Style */
 .navbar {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 25px;
-  background-color: var(--bg-primary);
+  background-color: rgba(5, 5, 5, 0.85); /* Dark transparent bg */
+  backdrop-filter: blur(10px);
   color: var(--text-primary);
   position: fixed;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px var(--shadow);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-bottom: 1px solid var(--primary-purple);
+  box-shadow: 0 0 15px rgba(188, 19, 254, 0.2);
+  transition: all 0.3s ease;
 }
 
 /* Logo */
@@ -25,17 +27,20 @@
 
 .logo-link:hover {
   transform: scale(1.05);
+  text-shadow: 0 0 10px var(--primary-gold);
 }
 
 .logo {
-  font-size: 1.2rem;
- 
-  font-weight: bold;
-  letter-spacing: 0.5px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
 }
 .logo .gold {
   color: var(--primary-gold);
+  text-shadow: 0 0 10px var(--primary-gold);
 }
 
 /* Left side */
@@ -65,18 +70,24 @@
   font-size: 0.9rem;
   padding: 6px 14px;
   border: 1px solid transparent;
-  border-radius: 0;
-  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 2px; /* Angular corners */
+  background-color: rgba(255, 255, 255, 0.02);
   transition: all 0.3s ease;
   text-decoration: none;
-  color: inherit;
+  color: var(--text-secondary);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
 }
 
 .nav-links li a:hover {
   border-color: var(--primary-gold);
   color: var(--primary-gold);
-  background-color: rgba(153, 69, 255, 0.15);
-  box-shadow: 0 0 10px rgba(153, 69, 255, 0.3);
+  background-color: rgba(0, 243, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+  text-shadow: 0 0 5px var(--primary-gold);
+  transform: translateY(-1px);
 }
 
 /* Right side */
@@ -90,18 +101,20 @@
   font-size: 1.1rem;
   cursor: pointer;
   transition: color 0.3s ease, transform 0.2s ease;
+  color: var(--text-secondary);
 }
 .icon:hover {
   color: var(--primary-gold);
   transform: scale(1.1);
+  filter: drop-shadow(0 0 5px var(--primary-gold));
 }
 
 /* Buttons */
 .lang-btn,
 .create-bet-btn {
   border: none;
-  border-radius: 0;
-  font-weight: 600;
+  border-radius: 2px;
+  font-weight: 700;
   cursor: pointer;
   padding: 8px 16px;
   transition: all 0.3s ease;
@@ -109,27 +122,31 @@
   align-items: center;
   gap: 8px;
   font-size: 0.9rem;
+  font-family: 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .lang-btn {
   background-color: transparent;
-  border: 1px solid var(--primary-gold);
-  color: var(--primary-gold);
+  border: 1px solid var(--primary-purple);
+  color: var(--primary-purple);
+  clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
 }
 .lang-btn:hover {
-  background-color: var(--primary-gold);
-  color: var(--primary-black);
+  background-color: var(--primary-purple);
+  color: #fff;
+  box-shadow: 0 0 15px var(--primary-purple);
 }
 
 .create-bet-btn {
-  background: linear-gradient(135deg, var(--primary-gold) 0%, #ffd700 100%);
-  color: var(--primary-black);
-  box-shadow: 0 4px 15px rgba(153, 69, 255, 0.4);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  background: transparent;
+  border: 1px solid var(--primary-gold);
+  color: var(--primary-gold);
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.2);
   position: relative;
   overflow: hidden;
+  clip-path: polygon(0 0, 90% 0, 100% 20%, 100% 100%, 10% 100%, 0 80%);
 }
 
 .create-bet-btn::before {
@@ -139,7 +156,8 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+  opacity: 0.2;
   transition: left 0.5s ease;
 }
 
@@ -148,8 +166,9 @@
 }
 
 .create-bet-btn:hover {
-  background: linear-gradient(135deg, #ffd700 0%, var(--primary-gold) 100%);
-  box-shadow: 0 6px 20px rgba(153, 69, 255, 0.6);
+  background: var(--primary-gold);
+  color: #000;
+  box-shadow: 0 0 20px var(--primary-gold);
   transform: translateY(-2px);
 }
 
@@ -177,25 +196,27 @@
 .hamburger:hover {
   color: var(--primary-gold);
   transform: scale(1.05);
+  text-shadow: 0 0 10px var(--primary-gold);
 }
 
 /* Drawer */
 .drawer {
   position: fixed;
   top: 0;
-  left: -270px;
-  width: 250px;
+  left: -280px;
+  width: 260px;
   height: 100%;
-  background-color: var(--bg-primary);
+  background-color: rgba(5, 5, 5, 0.95);
+  border-right: 1px solid var(--primary-purple);
   color: var(--text-primary);
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: left 0.35s ease;
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1100;
-  box-shadow: 4px 0 15px var(--shadow);
-  backdrop-filter: blur(8px);
+  box-shadow: 5px 0 25px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 .drawer.open {
@@ -207,6 +228,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(188, 19, 254, 0.3);
 }
 
 .drawer-left {
@@ -219,10 +242,12 @@
   font-size: 1.5rem;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.3s ease;
+  color: var(--primary-pink);
 }
 .close-icon:hover {
   transform: rotate(90deg);
   color: var(--primary-gold);
+  filter: drop-shadow(0 0 5px var(--primary-pink));
 }
 
 /* Drawer Links */
@@ -243,21 +268,27 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.95rem;
-  padding: 8px 12px;
-  border-radius: 0;
-  background-color: rgba(255, 255, 255, 0.05);
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid transparent;
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
-  color: inherit;
+  color: var(--text-secondary);
   width: 100%;
+  font-family: 'Rajdhani', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .drawer-links li a:hover {
   color: var(--primary-gold);
-  background-color: rgba(153, 69, 255, 0.15);
-  box-shadow: 0 0 10px rgba(153, 69, 255, 0.25);
+  background-color: rgba(0, 243, 255, 0.1);
+  border-left-color: var(--primary-gold);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.1);
+  padding-left: 20px; /* Slide effect */
 }
 
 /* Drawer Footer */
@@ -270,7 +301,7 @@
 .drawer-divider {
   width: 100%;
   height: 1px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(90deg, transparent, var(--primary-purple), transparent);
   margin: 15px 0;
 }
 .drawer-twitter {
@@ -281,14 +312,16 @@
 }
 .drawer-twitter:hover {
   transform: scale(1.2);
-  color: #ffcc1a;
+  color: #fff;
+  filter: drop-shadow(0 0 8px var(--primary-gold));
 }
 
 /* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
   z-index: 1050;
   animation: fadeIn 0.3s ease forwards;
 }
@@ -332,5 +365,3 @@
     display: none !important;
   }
 }
-
-/* Theme-aware styles are now handled by global CSS variables */

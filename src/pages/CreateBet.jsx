@@ -40,7 +40,7 @@ function CreateBet() {
     
     if (!formData.creator_bnb_address.trim()) {
       newErrors.creator_bnb_address = t('createBet.validation.bnbAddressRequired')
-    } else if (!/^0x[a-fA-F0-9]{40}$/.test(formData.creator_bnb_address)) {
+    } else if (!/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(formData.creator_bnb_address.trim())) {
       newErrors.creator_bnb_address = t('createBet.validation.bnbAddressInvalid')
     }
     
@@ -170,7 +170,7 @@ function CreateBet() {
 
             <div className="form-group">
               <label htmlFor="creator_bnb_address" className="form-label">
-                {t('createBet.form.bnbAddress')} *
+                Your SOL Address *
               </label>
               <input
                 type="text"
@@ -179,7 +179,7 @@ function CreateBet() {
                 value={formData.creator_bnb_address}
                 onChange={handleInputChange}
                 className={`form-input ${errors.creator_bnb_address ? 'error' : ''}`}
-                placeholder={t('createBet.form.bnbAddressPlaceholder')}
+                placeholder="Enter your Solana wallet address"
               />
               {errors.creator_bnb_address && <span className="error-message">{errors.creator_bnb_address}</span>}
             </div>

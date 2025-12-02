@@ -4,7 +4,6 @@ import "./Navbar.css";
 import { FaChartLine, FaTrophy, FaBookOpen, FaBars, FaCoins, FaPlus } from "react-icons/fa";
 import { LuBrainCircuit } from "react-icons/lu";
 import { FaXTwitter } from "react-icons/fa6";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { useTheme } from "../../contexts/ThemeContext";
 import { useTranslation } from "../../hooks/useTranslation";
@@ -71,28 +70,6 @@ const Navbar = () => {
       </div>
 
       <div className="nav-right">
-        {/* ✅ Show theme toggle on desktop only */}
-        {!isMobile && (
-          isDarkMode ? (
-            <MdLightMode 
-              className="icon" 
-              onClick={() => {
-                playClickSound();
-                toggleTheme();
-              }}
-              onMouseEnter={playHoverSound}
-            />
-          ) : (
-            <MdDarkMode 
-              className="icon" 
-              onClick={() => {
-                playClickSound();
-                toggleTheme();
-              }}
-              onMouseEnter={playHoverSound}
-            />
-          )
-        )}
         {!isMobile && <FaXTwitter className="icon" onMouseEnter={playHoverSound} />}
         <Link 
           to="/create-bet"
@@ -109,28 +86,9 @@ const Navbar = () => {
       <div className={`drawer ${drawerOpen ? "open" : ""}`}>
         <div className="drawer-header">
           <div className="drawer-left">
-            {isDarkMode ? (
-              <MdLightMode 
-                className="icon" 
-                onClick={() => {
-                  playClickSound();
-                  toggleTheme();
-                }}
-                onMouseEnter={playHoverSound}
-              />
-            ) : (
-              <MdDarkMode 
-                className="icon" 
-                onClick={() => {
-                  playClickSound();
-                  toggleTheme();
-                }}
-                onMouseEnter={playHoverSound}
-              />
-            )}
           </div>
           <IoClose 
-            className="close-icon" 
+            className="close-icon"  
             onClick={() => {
               playClickSound();
               toggleDrawer();

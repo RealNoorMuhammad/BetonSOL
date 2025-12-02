@@ -2,13 +2,13 @@
 .glitch-text {
   position: relative;
   display: inline-block;
-  color: #9945FF;
+  color: var(--primary-gold);
   font-weight: inherit;
   animation: glitch 2s infinite;
   text-shadow: 
-    0.05em 0 0 #808080,
-    -0.05em -0.025em 0 #ffffff,
-    0.025em 0.05em 0 #000000;
+    0.05em 0 0 var(--primary-purple),
+    -0.05em -0.025em 0 var(--primary-white),
+    0.025em 0.05em 0 var(--primary-black);
 }
 
 .glitch-text::before,
@@ -24,13 +24,13 @@
 
 .glitch-text::before {
   animation: glitch-1 0.5s infinite;
-  color: #808080;
+  color: var(--primary-purple);
   z-index: -1;
 }
 
 .glitch-text::after {
   animation: glitch-2 0.5s infinite;
-  color: #00ff00;
+  color: var(--primary-green);
   z-index: -2;
 }
 
@@ -130,11 +130,11 @@
 .glitch-text:hover {
   animation-duration: 0.3s;
   text-shadow: 
-    0.1em 0 0 #808080,
-    -0.1em -0.05em 0 #ffffff,
-    0.05em 0.1em 0 #000000,
-    0.15em 0.05em 0 #9945FF,
-    -0.15em -0.1em 0 #00ff00;
+    0.1em 0 0 var(--primary-purple),
+    -0.1em -0.05em 0 var(--primary-white),
+    0.05em 0.1em 0 var(--primary-black),
+    0.15em 0.05em 0 var(--primary-gold),
+    -0.15em -0.1em 0 var(--primary-green);
 }
 
 .glitch-text:hover::before {
